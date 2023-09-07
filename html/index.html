@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<button type="button" onclick="addParagraph()">Add Paragraph</button>
+<button type="button" onclick="RemoveParagraph()">Remove Paragraph</button>
+<button type="button" onclick="removeAll()">Remove All Paragraphs</button>
+<script>
+
+var paragraphs = [];
+
+function addParagraph() {
+  // 새로운 p 요소를 생성
+  var newParagraph = document.createElement('a');
+  
+  // 생성된 p 요소에 텍스트 설정
+  newParagraph.innerHTML = 'This is a new paragraph.';
+  
+  // 문서의 body에 새로운 p 요소 추가
+  document.body.appendChild(newParagraph);
+  paragraphs.push(newParagraph);
+}
+
+function RemoveParagraph(){
+    if(paragraphs.length>0){
+        var lastParagraph = paragraphs.pop();
+        lastParagraph.remove();
+    }
+}
+
+function removeAll(){
+    if(paragraphs.length > 0){
+        var allParagraph = paragraphs.pop();
+        for(var i = 0; i<=allParagraph; i)
+        allParagraph.remove();
+    }
+}
+
+</script>
+
+</body>
+</html>
